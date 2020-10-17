@@ -14,7 +14,7 @@ H = {
    “momentum”: 0.9
 }
 
-The requirement is to serialize the hyperparameters into a string such that she can easily remember her experiments. 
+The requirement is to serialize the hyperparameters into a string such that the experiments can be easily remembered. 
 for example, to create a function get_experiment_name(hyperparameters_dict, prefix_length=-1) that returns a string. prefix_length specifies the length of the hyperparameter prefix that will be reported in the experiment name string. In the case that two hyperparameters have the same prefix of length prefix_length, the function returns the minimum length prefix that can uniquely identify the hyperparameter.
 
 A few example usages are:
@@ -32,7 +32,8 @@ get_experiment_name(H, 1) ->
 Solution：
 
 By use of algorithm:TRIE (https://en.wikipedia.org/wiki/Trie) to solve the project.
-another way: use pygtrie (a Python library implementing a trie data structure).
+
+Another way: use pygtrie (a Python library implementing a trie data structure).
 
 
 
