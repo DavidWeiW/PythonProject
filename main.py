@@ -38,7 +38,7 @@ class Node:
         self.m_curr_index = 0
 
     def add_word(self, word, word_so_far='', curr_index=0, ptr=0):
-        '''add_word is called upon the root'''
+        """add_word is called upon the root"""
         try:
             self.m_word = word
             self.m_curr_index = curr_index
@@ -52,13 +52,13 @@ class Node:
 
             if ch not in self.m_children_ptrs:
                 self.m_children_ptrs.update({ch: Node()})
-            self.m_children_ptrs.get(ch).add_word(self.m_word, \
+            self.m_children_ptrs.get(ch).add_word(self.m_word,
                                                   self.m_word_so_far, self.m_curr_index + 1, self)
         except:
             print('{} : exception, please handle the error'.format('add_word'))
 
     def print_trie(self):
-        ''''pass'''
+        """pass"""
         try:
             if self:
                 if (len(self.m_children_ptrs) == 0):  # leaf node
@@ -71,7 +71,7 @@ class Node:
             print('{} : exception, please handle the error'.format('print_trie'))
 
     def find_unique_prefix(self, word):
-        ''''pass'''
+        """pass"""
         try:
             if len(self.m_parent_ptr.m_children_ptrs) > 1:
                 return self.m_word_so_far[0:-1]  # this is the unique prefix
@@ -82,7 +82,7 @@ class Node:
 
 
 def check_name(name_o, name_u, prefix_length):
-    ''''pass'''
+    """pass"""
     if prefix_length <= 0:
         return name_o
 
@@ -104,9 +104,9 @@ hyperparameters_dict = {
 
 
 def get_experiment_name(hp, prefix_length=-1):
-    '''TRIE
+    """TRIE
         create a empty Node and invoke add_word on it
-        thus populating the trie with the words'''
+        thus populating the trie with the words"""
     try:
         removetable = str.maketrans('', '', '_')
         words_org = list(hp.keys())
@@ -141,4 +141,3 @@ def get_experiment_name(hp, prefix_length=-1):
 
 result = get_experiment_name(hyperparameters_dict, 3)
 print('Test Result: {}'.format(result))
-
