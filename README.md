@@ -38,11 +38,13 @@ Another way: use pygtrie (a Python library implementing a trie data structure).
 
 
 Analysis: 
-some function still need optimization to reduce the executing time, for corner-cases possible problems, it may get slower if big dict dataset.
+
+Some function still need optimization to reduce the executing time, for corner-cases possible problems, it may get slower if big dict dataset.
 
 
 
 About time complexity:
+
 The trie is a tree of nodes which supports Find and Insert operations. Find returns the value for a key string, and Insert inserts a string (the key) and a value into the trie. 
 Both Insert and Find run in O(m) time (m is the length of the keys)  
 
